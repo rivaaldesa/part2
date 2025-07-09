@@ -446,6 +446,10 @@ const Home: React.FC = () => {
               Start Your Project
               <ArrowRight size={24} />
             </motion.button>
+            
+            <div className="text-sm text-blue-200 lg:text-base">
+              Free consultation • No commitments • Quick response
+            </div>
           </motion.div>
         </motion.section>
       </motion.div>
