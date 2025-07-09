@@ -448,7 +448,7 @@ const Home: React.FC = () => {
             </motion.button>
             
             <div className="text-sm text-blue-200 lg:text-base">
-              work
+              work results
             </div>
           </motion.div>
         </motion.section>
