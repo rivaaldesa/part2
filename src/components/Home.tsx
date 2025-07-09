@@ -448,7 +448,7 @@ const Home: React.FC = () => {
             </motion.button>
             
             <div className="text-sm text-blue-200 lg:text-base">
-              Free consultation • No commitments • Quick response
+              work
             </div>
           </motion.div>
         </motion.section>
