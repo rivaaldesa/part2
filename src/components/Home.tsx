@@ -448,7 +448,14 @@ const Home: React.FC = () => {
             </motion.button>
             
             <div className="text-sm text-blue-200 lg:text-base">
-              work results
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => navigate('/portfolio')}
+                className="hover:text-white transition-colors cursor-pointer"
+              >
+                View My Work →
+              </motion.button>
             </div>
           </motion.div>
         </motion.section>
