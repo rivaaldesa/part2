@@ -448,14 +448,19 @@ const Home: React.FC = () => {
             </motion.button>
             
             <div className="text-sm text-blue-200 lg:text-base">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => navigate('/portfolio')}
-                className="hover:text-white transition-colors cursor-pointer"
-              >
-                View My Work →
-              </motion.button>
+              <div className="space-y-2">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => navigate('/portfolio')}
+                  className="block hover:text-white transition-colors cursor-pointer"
+                >
+                  View My Work →
+                </motion.button>
+                <div className="text-blue-300">
+                  work results
+                </div>
+              </div>
             </div>
           </motion.div>
         </motion.section>
