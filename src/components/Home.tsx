@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Mail, Code, Palette, Search, Globe, Figma, Zap, Shield, Award } from 'lucide-react';
+import { ArrowRight, Mail, Code, Palette, Search, Globe, Figma, Zap, Shield, Award, Monitor, ShoppingCart, Target, Users, BarChart3 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Home: React.FC = () => {
