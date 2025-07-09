@@ -317,7 +317,7 @@ const Home: React.FC = () => {
               viewport={{ once: true }}
               className="text-3xl lg:text-4xl font-bold text-white"
             >
-              What I Do Best
+              Specialized Services That Drive Results
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -326,29 +326,67 @@ const Home: React.FC = () => {
               transition={{ delay: 0.1 }}
               className="text-blue-200 lg:text-lg"
             >
-              Specialized services that drive results
+              Comprehensive digital solutions to grow your business and online presence
             </motion.p>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="grid gap-6 lg:grid-cols-3 xl:grid-cols-4">
             {[
               {
-                icon: Globe,
-                title: 'Web Development',
-                description: 'Modern, responsive websites built with cutting-edge technologies',
-                color: 'from-blue-400 to-cyan-400'
+                icon: Monitor,
+                title: 'Website Creation',
+                description: 'Professional, responsive websites that convert visitors into customers',
+                color: 'from-blue-400 to-cyan-400',
+                link: '/website-services'
+              },
+              {
+                icon: Search,
+                title: 'SEO Services',
+                description: 'Boost your search rankings and drive organic traffic to your website',
+                color: 'from-green-400 to-blue-500',
+                link: '/seo-services'
+              },
+              {
+                icon: ShoppingCart,
+                title: 'SEO Marketplace',
+                description: 'Dominate Amazon, eBay, Etsy and other marketplace platforms',
+                color: 'from-orange-400 to-purple-500',
+                link: '/seo-marketplace-services'
+              },
+              {
+                icon: Target,
+                title: 'Ads Management',
+                description: 'Professional advertising campaigns that deliver exceptional ROI',
+                color: 'from-blue-500 to-purple-600',
+                link: '/ads-services'
+              },
+              {
+                icon: Users,
+                title: 'Social Media Management',
+                description: 'Build your brand and engage your audience across all platforms',
+                color: 'from-pink-500 to-purple-600',
+                link: '/social-media-services'
+              },
+              {
+                icon: BarChart3,
+                title: 'Digital Marketing Agency',
+                description: 'Full-service digital marketing solutions for complete growth',
+                color: 'from-blue-500 to-purple-600',
+                link: '/digital-marketing-agency'
               },
               {
                 icon: Palette,
                 title: 'UI/UX Design',
                 description: 'Beautiful, intuitive interfaces that users love to interact with',
-                color: 'from-purple-400 to-pink-400'
+                color: 'from-purple-400 to-pink-400',
+                link: '/portfolio'
               },
               {
-                icon: Search,
-                title: 'SEO Optimization',
-                description: 'Strategic optimization to boost your search engine rankings',
-                color: 'from-green-400 to-cyan-400'
+                icon: Code,
+                title: 'Web Development',
+                description: 'Custom web applications built with modern technologies',
+                color: 'from-cyan-400 to-blue-500',
+                link: '/portfolio'
               }
             ].map((service, index) => (
               <motion.div
@@ -358,6 +396,7 @@ const Home: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -8, scale: 1.02 }}
+                onClick={() => navigate(service.link)}
                 className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 lg:p-8 hover:bg-white/15 transition-all duration-300"
               >
                 <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-6`}>
@@ -366,6 +405,13 @@ const Home: React.FC = () => {
                 
                 <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
                 <p className="text-blue-200 leading-relaxed">{service.description}</p>
+                
+                <div className="mt-4 pt-4 border-t border-white/20">
+                  <div className="flex items-center text-cyan-300 text-sm font-medium hover:text-white transition-colors cursor-pointer">
+                    Learn More
+                    <ArrowRight size={16} className="ml-2" />
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
