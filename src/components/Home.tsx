@@ -305,6 +305,171 @@ const Home: React.FC = () => {
           </div>
         </motion.section>
 
+        {/* Why RivaaL dESA Section */}
+        <motion.section
+          variants={itemVariants}
+          className="px-6 py-16 max-w-md mx-auto lg:max-w-7xl lg:px-8"
+        >
+          <div className="text-center space-y-8 mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl lg:text-4xl font-bold text-white"
+            >
+              Why Choose RivaaL dESA?
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-blue-200 lg:text-lg lg:max-w-3xl lg:mx-auto"
+            >
+              Experience the difference of working with a dedicated professional who delivers 
+              exceptional results and unmatched value for your business growth.
+            </motion.p>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-2 xl:grid-cols-3 lg:gap-12">
+            {[
+              {
+                icon: Award,
+                title: 'Proven Track Record',
+                description: 'Over 500+ successful projects delivered with 98% client satisfaction rate. Our portfolio speaks for itself.',
+                highlight: '500+ Projects Completed',
+                color: 'from-yellow-400 to-orange-500'
+              },
+              {
+                icon: Zap,
+                title: 'Lightning-Fast Delivery',
+                description: 'Quick turnaround times without compromising quality. Most projects delivered within 2-6 weeks.',
+                highlight: '2-6 Week Delivery',
+                color: 'from-cyan-400 to-blue-500'
+              },
+              {
+                icon: Shield,
+                title: 'Quality Guarantee',
+                description: 'Every project comes with our quality guarantee and ongoing support to ensure your success.',
+                highlight: '100% Quality Assured',
+                color: 'from-green-400 to-emerald-500'
+              },
+              {
+                icon: Users,
+                title: 'Personalized Service',
+                description: 'Direct communication with RivaaL dESA. No middlemen, no confusion - just clear, professional service.',
+                highlight: 'Direct Communication',
+                color: 'from-purple-400 to-pink-500'
+              },
+              {
+                icon: BarChart3,
+                title: 'Results-Driven Approach',
+                description: 'Focus on measurable outcomes that impact your bottom line. Every decision is data-driven.',
+                highlight: 'Measurable Results',
+                color: 'from-blue-500 to-purple-600'
+              },
+              {
+                icon: Globe,
+                title: 'Cutting-Edge Technology',
+                description: 'Always using the latest tools and technologies to keep your business ahead of the competition.',
+                highlight: 'Latest Technology',
+                color: 'from-indigo-400 to-cyan-500'
+              }
+            ].map((benefit, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-8 hover:bg-white/15 transition-all duration-300 group"
+              >
+                <div className="space-y-6">
+                  {/* Icon */}
+                  <div className={`w-16 h-16 bg-gradient-to-br ${benefit.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                    <benefit.icon size={32} className="text-white" />
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="space-y-3">
+                    <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-blue-200 leading-relaxed">
+                      {benefit.description}
+                    </p>
+                  </div>
+                  
+                  {/* Highlight Badge */}
+                  <div className="pt-4 border-t border-white/20">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-white/20 text-cyan-300 group-hover:bg-cyan-400/20 group-hover:text-cyan-200 transition-colors">
+                      ✨ {benefit.highlight}
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Additional Value Props */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="mt-16 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 lg:p-12"
+          >
+            <div className="text-center space-y-6 mb-12">
+              <h3 className="text-2xl lg:text-3xl font-bold text-white">
+                What Sets Us Apart
+              </h3>
+              <p className="text-blue-200 lg:text-lg max-w-2xl mx-auto">
+                Beyond exceptional work, you get a partnership focused on your long-term success
+              </p>
+            </div>
+
+            <div className="grid gap-6 lg:grid-cols-4">
+              {[
+                {
+                  icon: '🎯',
+                  title: 'Strategic Thinking',
+                  description: 'Every project starts with understanding your business goals'
+                },
+                {
+                  icon: '💡',
+                  title: 'Creative Innovation',
+                  description: 'Fresh, original ideas that make your brand stand out'
+                },
+                {
+                  icon: '🚀',
+                  title: 'Growth Focused',
+                  description: 'Solutions designed to scale with your business'
+                },
+                {
+                  icon: '🤝',
+                  title: 'Long-term Partnership',
+                  description: 'Ongoing support and optimization for continued success'
+                }
+              ].map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
+                  className="text-center space-y-4 p-6 rounded-xl hover:bg-white/5 transition-all duration-300"
+                >
+                  <div className="text-4xl">{feature.icon}</div>
+                  <h4 className="text-lg font-bold text-white">{feature.title}</h4>
+                  <p className="text-blue-200 text-sm leading-relaxed">{feature.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </motion.section>
+
         {/* Services Preview */}
         <motion.section
           variants={itemVariants}
