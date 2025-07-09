@@ -447,6 +447,99 @@ const Home: React.FC = () => {
               <ArrowRight size={24} />
             </motion.button>
           </motion.div>
+
+          {/* Services Menu Grid */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="mt-16 lg:mt-20"
+          >
+            <div className="text-center space-y-4 mb-12">
+              <h3 className="text-2xl lg:text-3xl font-bold text-white">
+                Our Services
+              </h3>
+              <p className="text-blue-200 lg:text-lg max-w-2xl mx-auto">
+                Comprehensive digital solutions to grow your business
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+              {[
+                {
+                  icon: Monitor,
+                  title: 'Website Creation',
+                  description: 'Professional, responsive websites that convert visitors into customers',
+                  link: '/website-services',
+                  color: 'from-blue-400 to-cyan-400'
+                },
+                {
+                  icon: Search,
+                  title: 'SEO Services',
+                  description: 'Boost your search rankings and drive organic traffic',
+                  link: '/seo-services',
+                  color: 'from-green-400 to-blue-500'
+                },
+                {
+                  icon: ShoppingCart,
+                  title: 'SEO Marketplace',
+                  description: 'Dominate Amazon, eBay, Etsy and marketplace platforms',
+                  link: '/seo-marketplace-services',
+                  color: 'from-orange-400 to-purple-500'
+                },
+                {
+                  icon: Target,
+                  title: 'Ads Management',
+                  description: 'Professional advertising campaigns with exceptional ROI',
+                  link: '/ads-services',
+                  color: 'from-blue-500 to-purple-600'
+                },
+                {
+                  icon: Users,
+                  title: 'Social Media Management',
+                  description: 'Build your brand and engage across all platforms',
+                  link: '/social-media-services',
+                  color: 'from-pink-500 to-purple-600'
+                },
+                {
+                  icon: BarChart3,
+                  title: 'Digital Marketing Agency',
+                  description: 'Full-service digital marketing for complete growth',
+                  link: '/digital-marketing-agency',
+                  color: 'from-blue-500 to-purple-600'
+                }
+              ].map((service, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  onClick={() => navigate(service.link)}
+                  className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 lg:p-8 hover:bg-white/15 transition-all duration-300 cursor-pointer group"
+                >
+                  <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <service.icon size={32} className="text-white" />
+                  </div>
+                  
+                  <h4 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors">
+                    {service.title}
+                  </h4>
+                  
+                  <p className="text-blue-200 leading-relaxed mb-4">
+                    {service.description}
+                  </p>
+                  
+                  <div className="flex items-center text-cyan-300 text-sm font-medium group-hover:text-white transition-colors">
+                    Learn More
+                    <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </motion.section>
       </motion.div>
     </div>
