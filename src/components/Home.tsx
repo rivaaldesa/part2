@@ -582,6 +582,131 @@ const Home: React.FC = () => {
           </div>
         </motion.section>
 
+        {/* Portfolio Preview Section */}
+        <motion.section
+          variants={itemVariants}
+          className="px-6 py-16 max-w-md mx-auto lg:max-w-7xl lg:px-8"
+        >
+          <div className="text-center space-y-8 mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl lg:text-4xl font-bold text-white"
+            >
+              Featured Work
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-blue-200 lg:text-lg lg:max-w-3xl lg:mx-auto"
+            >
+              Explore some of our recent projects that showcase the quality and innovation 
+              we bring to every client engagement.
+            </motion.p>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-3 lg:gap-12 mb-12">
+            {[
+              {
+                title: 'Nexus Banking App',
+                category: 'UI/UX Design',
+                description: 'Modern banking interface with seamless user experience and intuitive navigation.',
+                image: 'https://images.pexels.com/photos/730547/pexels-photo-730547.jpeg?auto=compress&cs=tinysrgb&w=600',
+                year: '2024',
+                client: 'Nexus Financial'
+              },
+              {
+                title: 'EcoTech Brand Identity',
+                category: 'Branding',
+                description: 'Complete brand identity for sustainable technology company with modern aesthetics.',
+                image: 'https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=600',
+                year: '2024',
+                client: 'EcoTech Solutions'
+              },
+              {
+                title: 'ArtSpace Gallery',
+                category: 'Web Design',
+                description: 'Contemporary art gallery website redesign with clean, minimalist approach.',
+                image: 'https://images.pexels.com/photos/3183179/pexels-photo-3183179.jpeg?auto=compress&cs=tinysrgb&w=600',
+                year: '2023',
+                client: 'ArtSpace Gallery'
+              }
+            ].map((project, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                onClick={() => navigate('/portfolio')}
+                className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl overflow-hidden hover:bg-white/15 transition-all duration-300 cursor-pointer group"
+              >
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                
+                <div className="p-6 lg:p-8 space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium text-cyan-300 bg-cyan-400/20 px-3 py-1 rounded-full">
+                      {project.category}
+                    </span>
+                    <span className="text-sm text-blue-200">{project.year}</span>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors lg:text-2xl">
+                      {project.title}
+                    </h3>
+                    <p className="text-blue-200 leading-relaxed lg:text-lg">
+                      {project.description}
+                    </p>
+                  </div>
+                  
+                  {project.client && (
+                    <p className="text-sm text-blue-300 lg:text-base">
+                      Client: {project.client}
+                    </p>
+                  )}
+
+                  <div className="pt-4 border-t border-white/20">
+                    <div className="flex items-center text-cyan-300 text-sm font-medium group-hover:text-white transition-colors cursor-pointer lg:text-base">
+                      View Project
+                      <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* View All Portfolio CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="text-center"
+          >
+            <motion.button
+              whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(30, 233, 169, 0.3)" }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => navigate('/portfolio')}
+              className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border-2 border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all duration-300 lg:px-10"
+            >
+              View All Projects
+              <ArrowRight size={24} />
+            </motion.button>
+          </motion.div>
+        </motion.section>
+
         {/* Final CTA */}
         <motion.section
           variants={itemVariants}
