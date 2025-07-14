@@ -17,6 +17,7 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
   const navItems = [
     { label: 'Home', path: '/' },
     { label: 'Work', path: '/portfolio' },
+    { label: 'Blog', path: '/blog' },
     { label: 'About', path: '/about' },
     { label: 'Contact', path: '/contact' }
   ];

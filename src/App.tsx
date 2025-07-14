@@ -12,6 +12,7 @@ import SocialMediaServices from './components/SocialMediaServices';
 import DigitalMarketingAgency from './components/DigitalMarketingAgency';
 import WebsiteServices from './components/WebsiteServices';
 import SEOMarketplaceServices from './components/SEOMarketplaceServices';
+import Blog from './components/Blog';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/project/:id" element={<ProjectDetail />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/seo-services" element={<SEOServices />} />
           <Route path="/ads-services" element={<AdsServices />} />
           <Route path="/social-media-services" element={<SocialMediaServices />} />
