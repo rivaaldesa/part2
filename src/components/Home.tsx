@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Mail, Code, Palette, Search, Globe, Figma, Zap, Shield, Award, Monitor, ShoppingCart, Target, Users, BarChart3 } from 'lucide-react';
+import { ArrowRight, Mail, Code, Palette, Search, Globe, Figma, Zap, Shield, Award, Monitor, ShoppingCart, Target, Users, BarChart3, Clock } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Home: React.FC = () => {
@@ -736,6 +736,120 @@ const Home: React.FC = () => {
               Start Your Project
               <ArrowRight size={24} />
             </motion.button>
+
+            {/* Blog Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="mt-16 lg:mt-20"
+            >
+              <div className="text-center space-y-4 mb-12">
+                <h3 className="text-2xl lg:text-3xl font-bold text-white">
+                  Latest Insights
+                </h3>
+                <p className="text-blue-200 lg:text-lg max-w-2xl mx-auto">
+                  Stay updated with the latest trends, tips, and strategies in digital design and marketing
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                {[
+                  {
+                    title: 'The Future of Web Design: Trends to Watch in 2025',
+                    excerpt: 'Discover the latest web design trends that will shape the digital landscape in 2025, from AI-powered interfaces to immersive experiences.',
+                    category: 'Web Design',
+                    date: 'Dec 15, 2024',
+                    readTime: '8 min read',
+                    image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600'
+                  },
+                  {
+                    title: 'SEO Strategies That Actually Work in 2025',
+                    excerpt: 'Learn the most effective SEO techniques that are driving real results for businesses in today\'s competitive digital landscape.',
+                    category: 'SEO',
+                    date: 'Dec 10, 2024',
+                    readTime: '12 min read',
+                    image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600'
+                  },
+                  {
+                    title: 'Building a Brand That Resonates: A Complete Guide',
+                    excerpt: 'From logo design to brand voice, discover how to create a cohesive brand identity that connects with your target audience.',
+                    category: 'Branding',
+                    date: 'Dec 5, 2024',
+                    readTime: '10 min read',
+                    image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600'
+                  }
+                ].map((post, index) => (
+                  <motion.article
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    whileHover={{ y: -8, scale: 1.02 }}
+                    onClick={() => navigate('/blog')}
+                    className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl overflow-hidden hover:bg-white/15 transition-all duration-300 cursor-pointer group"
+                  >
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    
+                    <div className="p-6 lg:p-8 space-y-4">
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm font-medium text-cyan-300 bg-cyan-400/20 px-3 py-1 rounded-full">
+                          {post.category}
+                        </span>
+                        <span className="text-sm text-blue-200">{post.date}</span>
+                      </div>
+                      
+                      <div className="space-y-2">
+                        <h4 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors lg:text-2xl">
+                          {post.title}
+                        </h4>
+                        <p className="text-blue-200 leading-relaxed lg:text-lg">
+                          {post.excerpt}
+                        </p>
+                      </div>
+                      
+                      <div className="flex items-center justify-between pt-4 border-t border-white/20">
+                        <div className="flex items-center gap-2 text-sm text-blue-200">
+                          <Clock size={16} />
+                          <span>{post.readTime}</span>
+                        </div>
+                        <div className="flex items-center text-cyan-300 text-sm font-medium group-hover:text-white transition-colors">
+                          Read More
+                          <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                        </div>
+                      </div>
+                    </div>
+                  </motion.article>
+                ))}
+              </div>
+
+              {/* View All Blog Posts CTA */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="text-center mt-12"
+              >
+                <motion.button
+                  whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(30, 233, 169, 0.3)" }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => navigate('/blog')}
+                  className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border-2 border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all duration-300 lg:px-10"
+                >
+                  View All Articles
+                  <ArrowRight size={24} />
+                </motion.button>
+              </div>
+            </motion.div>
           </motion.div>
         </motion.section>
       </motion.div>
